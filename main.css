@@ -22,20 +22,15 @@ footer{
 
 
 a {
+    color: green;
     text-decoration: none;
-}
-
-a:link {
-    color: black;
-}
-
-a:visited {
-    color: black;
+    transition: 1s 2s;
 }
 
 a:hover {
     color: rgb(243, 6, 65);
     text-decoration: underline;
+    transition: 0.3s;
 }
 
 a:active {
