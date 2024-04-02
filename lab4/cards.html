@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Гаврилов Дмитрий Дмитриевич. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-48x48.ico">
+    <style>
+        .wrapper{
+            border: 3px solid black ;
+            border-radius: 30px;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            box-shadow: 0px 0px 15px greenyellow;
+        }
+        .card-img-yarche{
+            position: relative;
+            width: 380px;
+            height: 200px;
+            left: -30px;
+            bottom: -40px;
+        }
+        .yarche{
+            position: relative;
+            bottom: 160px;
+            text-align: center;
+            font-size: 25px;
+            color: darkorange;
+            text-shadow: 0px 0px 3px rgb(214, 218, 11);
+        }
+        .text-yarche{
+            position: relative;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+        .wrapper2{
+            border: 3px solid black ;
+            border-radius: 30px;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgb(231, 3, 79);
+            margin-left: 20px;
+        }
+        .card-img-chiorio{
+            position: relative;
+            width: 275px;
+            height: 200px;
+            left: 20px;
+            bottom: -60px;
+        }
+        .chiorio{
+            position: relative;
+            bottom: 160px;
+            text-align: center;
+            font-size: 25px;
+            color: darkorange;
+            text-shadow: 0px 0px 3px rgb(214, 218, 11);
+            
+        }
+        .text-chiorio{
+            position: relative;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            
+        }
+
+
+        .wrapper3{
+            border: 3px solid black ;
+            border-radius: 30px;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgb(250, 39, 2);
+            margin-left: 20px;
+            
+        }
+        .card-img-mars{
+            position: relative;
+            width: 275px;
+            height: 200px;
+            left: 10px;
+            bottom: -40px;
+            
+        }
+        .mars{
+            position: relative;
+            bottom: 160px;
+            text-align: center;
+            font-size: 25px;
+            color: darkorange;
+            text-shadow: 0px 0px 3px rgb(214, 218, 11);
+        }
+        .text-mars{
+            position: relative;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+        .wrapper4{
+            border: 3px solid black ;
+            border-radius: 30px;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgb(38, 0, 255);
+            margin-left: 20px;
+            
+        }
+        .card-img-snickers{
+            position: relative;
+            width: 275px;
+            height: 200px;
+            left: 15px;
+            bottom: -40px;
+        }
+        .snickers{
+            position: relative;
+            bottom: 160px;
+            text-align: center;
+            font-size: 25px;
+            color: darkorange;
+            text-shadow: 0px 0px 3px rgb(214, 218, 11);
+        }
+        .text-snickers{
+            position: relative;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+
+        .wrapper5{
+            border: 3px solid black ;
+            border-radius: 30px;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgb(230, 177, 3);
+            margin-top: 20px;
+            
+        }
+        .card-img-bounty{
+            position: relative;
+            width: 275px;
+            height: 200px;
+            left: 20px;
+            bottom: -50px;
+        }
+        .bounty{
+            position: relative;
+            bottom: 170px;
+            text-align: center;
+            font-size: 25px;
+            color: darkorange;
+            text-shadow: 0px 0px 3px rgb(214, 218, 11);
+        }
+        .text-bounty{
+            position: relative;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+        .wrapper6{
+            border: 3px solid black ;
+            border-radius: 30px;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgb(1, 243, 191);
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+        .card-img-twix{
+            position: relative;
+            width: 275px;
+            height: 200px;
+            left: 20px;
+            bottom: -30px;
+        }
+        .twix{
+            position: relative;
+            bottom: 170px;
+            text-align: center;
+            font-size: 25px;
+            color: darkorange;
+            text-shadow: 0px 0px 3px rgb(214, 218, 11);
+        }
+        .text-twix{
+            position: relative;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .wrapper7{
+            border: 3px solid black ;
+            border-radius: 30px;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgb(241, 6, 183);
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+        .card-img-picnic{
+            position: relative;
+            width: 275px;
+            height: 200px;
+            left: 20px;
+            bottom: -50px;
+        }
+        .picnic{
+            position: relative;
+            bottom: 170px;
+            text-align: center;
+            font-size: 25px;
+            color: darkorange;
+            text-shadow: 0px 0px 3px rgb(214, 218, 11);
+        }
+        .text-picnic{
+            position: relative;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+        .wrapper8{
+            border: 3px solid black ;
+            border-radius: 30px;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgb(230, 177, 3);
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+        .card-img-kitkat{
+            position: relative;
+            width: 275px;
+            height: 200px;
+            left: 20px;
+            bottom: -35px;
+        }
+        .kitkat{
+            position: relative;
+            bottom: 170px;
+            text-align: center;
+            font-size: 25px;
+            color: darkorange;
+            text-shadow: 0px 0px 3px rgb(214, 218, 11);
+        }
+        .text-kitkat{
+            position: relative;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .main1{
+            display: flex;
+        }
+        .main2{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="main1">
+            <div class="wrapper">
+                <img class="card-img-yarche" src="../yarche.png">
+                <div class="yarche">Конфета "Ярче!"</div>
+                <div class="text-yarche">Жизнь с конфетой ярче станет ярче!</div>
+            </div>
+
+
+            <div class="wrapper2">
+                <img class="card-img-chiorio" src="../chiorio.jpg">
+                <div class="chiorio">Конфета "Чио рио"</div>
+                <div class="text-chiorio">Чио это как рио но только чио рио</div>
+            </div>
+
+
+            <div class="wrapper3">
+                <img class="card-img-mars" src="../mars.jpg">
+                <div class="mars">Конфета "Марс"</div>
+                <div class="text-mars">С конфетой марс буд-то на марсе!</div>
+            </div>
+
+
+            <div class="wrapper4">
+                <img class="card-img-snickers" src="../snickers.jpg">
+                <div class="snickers">Конфета "Сникерс"</div>
+                <div class="text-snickers">Не тормози сникерсни</div>
+            </div>
+        </div>
+
+
+
+        <div class="main2">
+            <div class="wrapper5">
+                <img class="card-img-bounty" src="../bounty.jpg">
+                <div class="bounty">Кофета "Баунти"</div>
+                <div class="text-bounty">Баунти райское наслаждение</div>
+            </div>
+
+
+            <div class="wrapper6">
+                <img class="card-img-twix" src="../twix.jpg">
+                <div class="twix">Конфета "Твикс"</div>
+                <div class="text-twix">Попробуй обе и реши на чей стороне ты</div>
+            </div>
+
+
+            <div class="wrapper7">
+                <img class="card-img-picnic" src="../picnic.jpeg">
+                <div class="picnic">Конфета "Пикник"</div>
+                <div class="text-picnic">Пикник а я думал просто пик</div>
+            </div>
+
+
+            <div class="wrapper8">
+                <img class="card-img-kitkat" src="../kitkat.png">
+                <div class="kitkat">Конфета "Киткат"</div>
+                <div class="text-kitkat">Сочная мощная вкусная и так далее</div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; Дмитрий Гаврилов, ФБИ-21, 2 курс 2024
+    </footer>
+
+</body>
+
+</html>
