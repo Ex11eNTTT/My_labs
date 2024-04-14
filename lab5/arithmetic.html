@@ -11,7 +11,15 @@
             let a = 5154;
             let b = 7891;
             let result = a + b;
-            alert("Сумма "+ a +" и " + b + " равна " + result)
+            alert("Сумма "+ a +" и " + b + " равна " + result);
+        }
+        function ShowAuthot(){
+            let author = "Автор страницы:\nГаврилов Дмитрий Дмитриевич";
+            alert(author);
+        }
+        function PodvalClick(){
+            let message = "Приветствую вас на моей странице! Ты лучше всех!"
+            alert(message)
         }
 
     </script>
@@ -49,16 +57,16 @@
 
 <body>
 
-    <header>
+    <header onclick="ShowAuthot()" style="cursor: pointer;">
         НГТУ, ФБ, Лабораторная работа 5
     </header>
 
     <main>
         <div class="message" onclick="ShowSum()">Сколько будет 5154+7891?</div>
-        <div class="message2">Узнать, кто автор страницы</div>
+        <div class="message2" onclick="ShowAuthot()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
+    <footer ondblclick="PodvalClick()" style="cursor: pointer;">
         &copy; Дмитрий Гаврилов, ФБИ-21, 2 курс 2024
     </footer>
 
