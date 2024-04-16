@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Гаврилов Дмитрий Дмитриевич. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function blurChange(){
+            let value = document.getElementById("Blurvalue").value + "px"
+            document.getElementById("Bluroutput").innerText = value
+            document.getElementById("blurImage").style.filter = "blur("+value+")"
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        Фильтр Blur:
+        <div><input type="range" min="0" max="20" value="0" onchange="blurChange()" id="Blurvalue"></div>
+        <span id="Bluroutput"></span>
+        <div><img src="invoker.jpg" id="blurImage" height="400px"></div>
+    </main>
+
+    <footer>
+        &copy; Дмитрий Гаврилов, ФБИ-21, 2 курс 2024
+    </footer>
+
+</body>
+
+</html>
