@@ -42,6 +42,11 @@
             document.getElementById("Bluroutput6").innerText = value
             document.getElementById("blurImage").style.filter = "saturate("+value+")"
         }
+        function sepiaChange(){
+            let value = document.getElementById("Blurvalue7").value + "%"
+            document.getElementById("Bluroutput7").innerText = value
+            document.getElementById("blurImage").style.filter = "sepia("+value+")"
+        }
     </script>
 </head>
 
@@ -55,18 +60,27 @@
         Фильтр Blur:
         <div><input type="range" min="0" max="20" value="0" onchange="blurChange()" id="Blurvalue"></div>
         <span id="Bluroutput"></span>
+        Фильтр brightness:
         <div><input type="range" min="0" max="500" value="100" onchange="brightnessChange()" id="Blurvalue1"></div>
         <span id="Bluroutput1"></span>
+        Фильтр contrast:
         <div><input type="range" min="0" max="500" value="100" onchange="contrastChange()" id="Blurvalue2"></div>
         <span id="Bluroutput2"></span>
+        Фильтр grayscale:
         <div><input type="range" min="0" max="100" value="0" onchange="grayscaleChange()" id="Blurvalue3"></div>
         <span id="Bluroutput3"></span>
+        Фильтр hue-rotate:
         <div><input type="range" min="0" max="360" value="0" onchange="huerotateChange()" id="Blurvalue4"></div>
         <span id="Bluroutput4"></span>
+        Фильтр invert:
         <div><input type="range" min="0" max="100" value="0" onchange="invertChange()" id="Blurvalue5"></div>
         <span id="Bluroutput5"></span>
+        Фильтр saturate:
         <div><input type="range" min="0" max="500" value="100" onchange="saturateChange()" id="Blurvalue6"></div>
         <span id="Bluroutput6"></span>
+        Фильтр sepia:
+        <div><input type="range" min="0" max="100" value="0" onchange="sepiaChange()" id="Blurvalue7"></div>
+        <span id="Bluroutput7"></span>
         <div><img src="invoker.jpg" id="blurImage" height="400px"></div>
     </main>
 
