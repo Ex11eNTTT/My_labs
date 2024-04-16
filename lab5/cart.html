@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Гаврилов Дмитрий Дмитриевич. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+       function changeOutPut(){
+        let inputA = document.getElementById('numberA');
+        let inputB = document.getElementById('numberB');
+        let inputC = document.getElementById('numberC');
+        let inputD = document.getElementById('numberD');
+
+        let a = inputA.value === "" ? 0 : parseInt(inputA.value);
+        let b = inputB.value === "" ? 0 : parseInt(inputB.value);
+        let c = inputC.value === "" ? 0 : parseInt(inputC.value);
+        let d = inputD.value === "" ? 0 : parseInt(inputD.value);
+
+        if (a < 0 || b < 0 || c < 0 || d < 0) {
+            output.innerHTML = "Нельзя вводить отрицательное число";
+        } else {
+            let result = "Общая цена: "+ (a*100+b*80+c*150+d*300) + " рублей";
+            output.innerHTML = result;
+        }
+        }
+        function change(){
+            output.innerHTML = "";
+            numberA.value = ""
+            numberB.value = ""
+            numberC.value = ""
+            numberD.value = ""
+        }
+
+    </script>
+
+    <style>
+        .main1{
+            border: 1px solid red;
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            font-weight: bold;
+        }
+        .zagolovok{
+            font-weight: lighter;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <div class="main1">
+
+            Корзина товаров<br>
+
+            <span class="zagolovok">Яблоки (100р/шт)</span>
+
+            <input type="number" id="numberA" min="0" placeholder="введите кол-во яблок">
+
+            <span class="zagolovok">Груши (80р/шт)</span>
+
+            <input type="number" id="numberB" min="0" placeholder="введите кол-во груш">
+
+            <span class="zagolovok">Апельсины (150р/шт)</span>
+
+            <input type="number" id="numberC" min="0" placeholder="введите кол-во апельсинов">
+
+            <span class="zagolovok">Дыни (300р/шт)</span>
+
+            <input type="number" id="numberD" min="0" placeholder="введите кол-во дынь">
+
+            <input type="button" value="Рассчитать" onclick="changeOutPut()">
+
+            <input type="button" value="Очистить" onclick="change()">
+
+            <div id="output"></div>
+        </div>
+        
+    </main>
+
+    <footer>
+        &copy; Дмитрий Гаврилов, ФБИ-21, 2 курс 2024
+    </footer>
+
+</body>
+
+</html>
