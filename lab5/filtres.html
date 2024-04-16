@@ -37,6 +37,11 @@
             document.getElementById("Bluroutput5").innerText = value
             document.getElementById("blurImage").style.filter = "invert("+value+")"
         }
+        function saturateChange(){
+            let value = document.getElementById("Blurvalue6").value + "%"
+            document.getElementById("Bluroutput6").innerText = value
+            document.getElementById("blurImage").style.filter = "saturate("+value+")"
+        }
     </script>
 </head>
 
@@ -60,6 +65,8 @@
         <span id="Bluroutput4"></span>
         <div><input type="range" min="0" max="100" value="0" onchange="invertChange()" id="Blurvalue5"></div>
         <span id="Bluroutput5"></span>
+        <div><input type="range" min="0" max="500" value="100" onchange="saturateChange()" id="Blurvalue6"></div>
+        <span id="Bluroutput6"></span>
         <div><img src="invoker.jpg" id="blurImage" height="400px"></div>
     </main>
 
