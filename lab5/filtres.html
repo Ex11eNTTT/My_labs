@@ -32,6 +32,11 @@
             document.getElementById("Bluroutput4").innerText = value
             document.getElementById("blurImage").style.filter = "hue-rotate("+value+")"
         }
+        function invertChange(){
+            let value = document.getElementById("Blurvalue5").value + "%"
+            document.getElementById("Bluroutput5").innerText = value
+            document.getElementById("blurImage").style.filter = "invert("+value+")"
+        }
     </script>
 </head>
 
@@ -53,6 +58,8 @@
         <span id="Bluroutput3"></span>
         <div><input type="range" min="0" max="360" value="0" onchange="huerotateChange()" id="Blurvalue4"></div>
         <span id="Bluroutput4"></span>
+        <div><input type="range" min="0" max="100" value="0" onchange="invertChange()" id="Blurvalue5"></div>
+        <span id="Bluroutput5"></span>
         <div><img src="invoker.jpg" id="blurImage" height="400px"></div>
     </main>
 
