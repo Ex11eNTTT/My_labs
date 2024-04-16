@@ -22,6 +22,11 @@
             document.getElementById("Bluroutput2").innerText = value
             document.getElementById("blurImage").style.filter = "contrast("+value+")"
         }
+        function grayscaleChange(){
+            let value = document.getElementById("Blurvalue3").value + "%"
+            document.getElementById("Bluroutput3").innerText = value
+            document.getElementById("blurImage").style.filter = "grayscale("+value+")"
+        }
     </script>
 </head>
 
@@ -39,6 +44,8 @@
         <span id="Bluroutput1"></span>
         <div><input type="range" min="0" max="500" value="100" onchange="contrastChange()" id="Blurvalue2"></div>
         <span id="Bluroutput2"></span>
+        <div><input type="range" min="0" max="100" value="0" onchange="grayscaleChange()" id="Blurvalue3"></div>
+        <span id="Bluroutput3"></span>
         <div><img src="invoker.jpg" id="blurImage" height="400px"></div>
     </main>
 
