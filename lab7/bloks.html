@@ -80,28 +80,72 @@
 
            
     }
-    function add_opacity(){
-            let main = document.querySelector('main');
-            for (let i = 0; i <= 10 ; i+= 1){
-                let newBlock = document.createElement('div');
-                newBlock.style.backgroundColor = 'blue';
-                newBlock.style.display = 'flex'
-                newBlock.style.alignItems = 'center'
-                newBlock.style.justifyContent = 'center'
-                newBlock.style.height = '50px';
-                newBlock.style.border = 'solid 2px green'
-                newBlock.style.margin = '2px'
-                newBlock.style.width = "100px"
-                newBlock.style.color = "yellow"
-                newBlock.style.textAlign = 'center'
-                newBlock.style.opacity =  i * 0.1
-                
-                newBlock.innerHTML = `${i}`;
-                main.appendChild(newBlock);
+        function add_opacity(){
+                let main = document.querySelector('main');
+                for (let i = 0; i <= 10 ; i+= 1){
+                    let newBlock = document.createElement('div');
+                    newBlock.style.backgroundColor = 'blue';
+                    newBlock.style.display = 'flex'
+                    newBlock.style.alignItems = 'center'
+                    newBlock.style.justifyContent = 'center'
+                    newBlock.style.height = '50px';
+                    newBlock.style.border = 'solid 2px green'
+                    newBlock.style.margin = '2px'
+                    newBlock.style.width = "100px"
+                    newBlock.style.color = "yellow"
+                    newBlock.style.textAlign = 'center'
+                    newBlock.style.opacity =  i * 0.1
+                    
+                    newBlock.innerHTML = `${i}`;
+                    main.appendChild(newBlock);
 
-            }
+                }
 
         }
+        function add_red_green(){
+            let main = document.querySelector('main');
+            let number = document.getElementById('colors').value;
+            number = parseInt(number);
+            let flexContainer = document.createElement('div');
+            flexContainer.style.display = 'flex';
+            flexContainer.style.alignItems = 'center';
+            main.appendChild(flexContainer);
+
+            for (let i = number; i >= 1; i -= 1){
+                let newBlock = document.createElement('div');
+                if (i % 2 == 0){
+                    newBlock.style.backgroundColor = "green";
+                    newBlock.style.margin = '2px';
+                    newBlock.style.width = "100px";
+                    newBlock.style.display = 'flex';
+                    newBlock.style.height = '50px';
+                    newBlock.style.border = 'solid 2px green';
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.alignItems = 'center';
+                    newBlock.style.justifyContent = 'center';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.innerHTML = `${i}`;
+                    newBlock.style.justifyContent = 'center'
+                    flexContainer.appendChild(newBlock);
+                }
+                else{
+                    newBlock.style.backgroundColor = "red";
+                    newBlock.style.margin = '2px';
+                    newBlock.style.width = "100px";
+                    newBlock.style.height = '50px';
+                    newBlock.style.display = 'flex';
+                    newBlock.style.border = 'solid 2px green';
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.alignItems = 'center';
+                    newBlock.style.justifyContent = 'center';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.style.color = 'green';
+                    newBlock.innerHTML = `${i}`;
+                    flexContainer.appendChild(newBlock);
+                }
+            }
+        }
+        
     </script>
 </head>
 
@@ -118,7 +162,8 @@
         <button onclick="add20_50()">20=>50</button>
         <button onclick="add10_m80()">10=>-80</button>
         <button onclick="add_opacity()">opacity</button>
-
+        <input type="number" value="0" id="colors"></label>
+        <button onclick="add_red_green()">Цветные круги</button>
     </main>
 
     <footer>
