@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Гаврилов Дмитрий Дмитриевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+
+        function showExchange(){
+            const exchange = [93.2918, 92.5058, 92.1314, 92.0134,91.7791,92.0538, 91.6918, 
+            91.3124, 91.1231, 91.8239];
+            let table = document.getElementById('dollar-table');
+            for(let i = 0; i < exchange.length; i++){
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+
+            }
+            let sum = 0
+            let detail = document.getElementById('detail')
+            for(let i = 0; i < exchange.length; i++){
+                sum += exchange[i]
+
+
+            }
+            let avarage = sum/exchange.length
+            avarage = avarage.toFixed(2)
+            detail.innerHTML = "Среднее значение: " + avarage
+            document.getElementById('but').style.display = 'none'
+
+        }
+            
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+      <button onclick='showExchange()' id="but">Курс доллара</button>
+      <table border="1" id="dollar-table"></table>
+      <div id="detail"></div>
+    </main>
+
+    <footer>
+        &copy; Дмитрий Гаврилов, ФБИ-21, 2 курс 2024
+    </footer>
+
+</body>
+
+</html>
