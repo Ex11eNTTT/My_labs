@@ -80,6 +80,28 @@
 
            
     }
+    function add_opacity(){
+            let main = document.querySelector('main');
+            for (let i = 0; i <= 10 ; i+= 1){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'blue';
+                newBlock.style.display = 'flex'
+                newBlock.style.alignItems = 'center'
+                newBlock.style.justifyContent = 'center'
+                newBlock.style.height = '50px';
+                newBlock.style.border = 'solid 2px green'
+                newBlock.style.margin = '2px'
+                newBlock.style.width = "100px"
+                newBlock.style.color = "yellow"
+                newBlock.style.textAlign = 'center'
+                newBlock.style.opacity =  i * 0.1
+                
+                newBlock.innerHTML = `${i}`;
+                main.appendChild(newBlock);
+
+            }
+
+        }
     </script>
 </head>
 
@@ -95,6 +117,7 @@
         <input type="number" value="100" id="balance"></label>
         <button onclick="add20_50()">20=>50</button>
         <button onclick="add10_m80()">10=>-80</button>
+        <button onclick="add_opacity()">opacity</button>
 
     </main>
 
