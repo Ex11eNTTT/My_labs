@@ -6,6 +6,20 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
+    <script>
+       function getEuroExchangeRate(){
+            const url = "https://www.cbr-xml-daily.ru/money.js";
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(json){
+                console.log(json.Value.EUR.Value);
+            })
+        }   
+
+
+    </script>
 </head>
 
 <body>
@@ -15,13 +29,8 @@
     </header>
 
     <main>
-        <ol>
-            <a href="bloks.html">Добавление блоков</a>
-            <a href="dollar.html">Курс даоллара</a>
-            <a href="Фармсинтез.html">Котировки акции компании Фармсинтез</a>
-            <a href="euru.html">Курс евро</a>
-        </ol>
-
+        <a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a>
+        <button onclick="getEuroExchangeRate()">Получить курс обмена евро</button>
     </main>
 
     <footer>

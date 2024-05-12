@@ -6,67 +6,66 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
-    <script>
-
-              
-            
-
+        <script>
             function ChangeColor(div){
-                let currentColor = window.getComputedStyle(div).backgroundColor;
-                if (currentColor === 'rgb(255, 255, 0)'){
+                if (div.style.backgroundColor == "yellow"){
                     div.style.backgroundColor = 'red';
-                    document.getElementById('word-color').innerHTML = "красный";
-                }
-                else if (currentColor === 'rgb(255, 0, 0)'){
-                    div.style.backgroundColor = 'black';
-                    document.getElementById('word-color').innerHTML = "черный";
-                }
-                else if (currentColor === 'rgb(0, 0, 0)'){
+                    document.getElementById('word-color').innerHTML = 'красный';
+                    div.style.color = "white";
+                
+                } 
+                else if(div.style.backgroundColor == 'red'){
                     div.style.backgroundColor = 'green';
-                    document.getElementById('word-color').innerHTML = "зеленый";
+                    document.getElementById('word-color').innerHTML = 'Зеленый';
+                    div.style.color = "black";
+
                 }
-                else if (currentColor === 'rgb(0, 128, 0)'){
-                    div.style.backgroundColor = 'pink';
-                    document.getElementById('word-color').innerHTML = "розовый";
+                else if(div.style.backgroundColor == 'green'){
+                    div.style.backgroundColor = 'white';
+                    document.getElementById('word-color').innerHTML = 'Белый';
+                    div.style.color = "red";
+
                 }
-                else if (currentColor === 'rgb(255, 192, 203)'){
-                    div.style.backgroundColor = 'brown';
-                    document.getElementById('word-color').innerHTML = "коричневый";
+                else if(div.style.backgroundColor == 'white'){
+                    div.style.backgroundColor = 'purple';
+                    document.getElementById('word-color').innerHTML = 'Фиолетовый';
+                    div.style.color = "lightgreen";
+
                 }
-                else if (currentColor === 'rgb(0, 128, 0)'){
+                else {
                     div.style.backgroundColor = 'yellow';
-                    document.getElementById('word-color').innerHTML = "желтый";
+                    document.getElementById('word-color').innerHTML = 'желтый';
                 }
-            }
-
-    </script>
-    <style>
-        .color{
-            border: 1px solid blue;
-            border-radius: 10px;
-            background-color: yellow;
-            width: 700px;
-            height: 500px;
-            text-align: center;
-            line-height: 500px;
-            font-size: 20px;
-            color: blue;
+                div.style.transition = "background-color 0.3s, color 0.3s";
         }
-    </style>
-</head>
-
-<body>
-
+        </script>
+        <style>
+            .color{
+                border: 1px solid blue;
+                border-radius: 10px;
+                background-color: yellow;
+                width: 700px;
+                height: 500px;
+                text-align: center;
+                line-height: 500px;
+                font-size: 20px;
+                color: rgb(1, 1, 20);
+                cursor: pointer;
+                
+            }
+        </style>
+    </head>
+    
+    <body>
+    
     <header>
         НГТУ, ФБ, Лабораторная работа 6
     </header>
-
+    
     <main>
         <div class="color" ondblclick="ChangeColor(this)">
             Цвет: <span id="word-color"> желтый </span> нажмите два раза, что бы сменить цвет
         </div>
-        
-  
     </main>
 
     <footer>
