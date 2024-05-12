@@ -6,6 +6,140 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function getGel(){
+            const url = "https://www.cbr-xml-daily.ru/daily_json.js";
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(json){
+                console.log(json);
+                let usernumber = document.getElementById('input').value;
+                let output  = document.getElementById('output');
+                let first = document.getElementById('first').value;
+                let second = document.getElementById('second').value;
+                usernumber =  parseInt(usernumber);
+                if (usernumber<0 || isNaN(usernumber)){
+                    output.innerText = 'Некоректные данные'
+                }
+                else if(first == "RUB" && second == "RUB"){
+                    output.innerText = usernumber + " ₽"
+                }
+                
+                else if(first == "GEL" && second == "GEL"){
+                    output.innerText = usernumber + " ₾"
+                }
+                else if(first == "RUB" && second == "GEL"){
+                    output.innerText = ((json.Valute.GEL.Value) / usernumber) + " ₾";
+                }
+                else if(first == "GEL" && second == "RUB"){
+                    output.innerText = ((json.Valute.GEL.Value) * usernumber) + " ₽";
+                }
+                
+                
+
+            })
+        }
+
+
+
+    </script>
+
+    <style>
+        .mainwindow{
+            border: solid 3px green;
+            border-radius: 40px;
+            margin: 40px;
+            width: 600px;
+            height: 400px;
+            padding: 10px;
+            background: linear-gradient(to right, rgba(139, 245, 1, 0.3), rgba(128,128,128,0.3));
+            box-shadow: 0px 0px 3px;
+        }
+
+        #name{
+            font-size: 50px;
+            text-align: center;
+            opacity: 1;
+            color: darkgreen;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-shadow: 0px 0px 1px;
+            margin-bottom: 60px;
+        }
+        #first{
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            font-size: 40px;
+            border-radius: 30px;
+            background: linear-gradient(to right, rgba(124, 214, 5, 0.3), rgba(16, 233, 233, 0.3))
+        }
+        #second{
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            font-size: 40px;
+            border-radius: 30px;
+            background: linear-gradient(to right, rgba(124, 214, 5, 0.3), rgba(16, 233, 233, 0.3))
+        }
+        #RUBGEL{
+            display: flex;
+
+        }
+        #RUB{
+            margin-left: 40px;
+        }
+        #GEL{
+            margin-left: 80px;
+        }
+        #button{
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            color: lightgreen;
+            background: linear-gradient(to right, rgba(15, 130, 165, 0.3), rgba(14, 44, 44, 0.3))
+
+        }
+        #raschitat{
+            border: 1px solid black;
+            width: 120px;
+            height: 30px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 220px;
+            cursor: pointer;
+            background-color: gray;
+
+        
+        }
+        #input{
+            border-radius: 30px;
+            width: 150px;
+            height: 50px;
+            margin-top: 10px;
+            margin-left: 60px;
+            font-size: 30px;
+        }
+        #output{
+            display: flex;
+            border: 1px solid black;
+            border-radius: 30px;
+            width: 400px;
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+            margin-left: 90px;
+            margin-top: 10px;
+            background: linear-gradient(to right, rgba(15, 130, 165, 0.3), rgba(14, 44, 44, 0.3));
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            
+        }
+
+    </style>
    
     
 </head>
@@ -34,6 +168,26 @@
     </header>
 
     <main>
+        <div class="mainwindow">
+            <div id="name">Конвертор валют</div>
+                <div id="RUBGEL">
+                    <div id="RUB">
+                        <select id="first">
+                            <option>RUB</option>
+                            <option>GEL</option>
+                        </select>
+                    </div>
+                    <div id="GEL">
+                        <select id="second">
+                            <option>GEL</option>
+                            <option>RUB</option>
+                        </select>
+                    </div>
+                </div>
+            <input type="number" id="input" min="1" value="0">
+            <div id="raschitat" onclick="getGel()">Расчитать</div>
+            <div id="output">000</div>
+        </div>
        
     </main>
 

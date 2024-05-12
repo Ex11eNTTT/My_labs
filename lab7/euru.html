@@ -14,7 +14,7 @@
                 return response.json();
             })
             .then(function(json){
-                console.log(json.Date);
+                console.log(json);
                 let table = document.getElementById('table-eur');
                 let tr = document.createElement('tr');
                 let td = document.createElement('td');
@@ -22,7 +22,7 @@
                 tr.appendChild(td);
                 
                 let td2 = document.createElement('td');
-                td2.innerText = json.Valute.EUR.Value;;
+                td2.innerText = json.Valute.EUR.Value;
                 tr.appendChild(td2);
                 
                 table.appendChild(tr)
