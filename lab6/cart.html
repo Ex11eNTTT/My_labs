@@ -53,8 +53,11 @@
                 cart7 = 0;
             }
 
-            
-            if(cart1 == 0 && cart2 == 0 && cart3 == 0 && cart4 == 0 && cart5 == 0 && cart6 == 0 && cart7 == 0){
+            if (isNaN(balance)){
+                output.innerHTML = "Введите число!"
+
+            }
+            else if(cart1 == 0 && cart2 == 0 && cart3 == 0 && cart4 == 0 && cart5 == 0 && cart6 == 0 && cart7 == 0){
                 output.innerHTML = "Выбирите хотябы 1 товар!!!";
             }
             else if(cart1 < 0 || cart2 < 0 ||  cart3 < 0 ||  cart4 < 0 ||  cart5 < 0 ||  cart6 < 0 ||  cart7 < 0){
