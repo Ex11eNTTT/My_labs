@@ -8,15 +8,28 @@
     <link rel="icon" href="../favicon-32x32.png">
     <script>
        function getEuroExchangeRate(){
-            const url = "https://www.cbr-xml-daily.ru/money.js";
+            const url = "https://www.cbr-xml-daily.ru/daily_json.js";
             fetch(url)
             .then(function(response){
                 return response.json();
             })
             .then(function(json){
-                console.log(json.Value.EUR.Value);
+                console.log(json.Date);
+                let table = document.getElementById('table-eur');
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = json.Date.split("T")[0];
+                tr.appendChild(td);
+                
+                let td2 = document.createElement('td');
+                td2.innerText = json.Valute.EUR.Value;;
+                tr.appendChild(td2);
+                
+                table.appendChild(tr)
+
+
             })
-        }   
+        }
 
 
     </script>
@@ -31,6 +44,7 @@
     <main>
         <a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a>
         <button onclick="getEuroExchangeRate()">Получить курс обмена евро</button>
+        <table border="1" id="table-eur"></table>
     </main>
 
     <footer>
