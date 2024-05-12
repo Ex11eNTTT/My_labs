@@ -21,7 +21,7 @@
             let input = document.getElementById("user-number")
             let userNumber = parseInt(input.value)
             let message = document.getElementById("result")
-            if (userNumber == "" || userNumber ){
+            if (userNumber == "" || isNaN(userNumber) ){
                 message.innerHTML = "Вы вообще не то вводите!!!!"
             }
             
