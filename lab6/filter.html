@@ -11,6 +11,7 @@
             let color = document.getElementById("wear-color").value;
             let type = document.getElementById("wear-type").value;
             let wear = document.getElementById("wear");
+            wear.style.display = 'block';
             if (color == "Красный" && type =="Футболка"){
                 wear.src = 'red-t-shirt.png'
             }
@@ -65,7 +66,7 @@
 
 
             <button onclick="filter()">OK</button><br>
-            <img id="wear" src="" width="400" height="600">
+            <img id="wear" src="" width="400" height="600" style="display: none;">
         </div>
     </main>
 
