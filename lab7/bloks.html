@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Гаврилов Дмитрий Дмитриевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+
+    <script>
+        function addNewBlock(){
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'green';
+            newBlock.style.height = '40px';
+            newBlock.style.border = 'solid 2px black'
+            newBlock.style.borderRadius = '2px'
+            newBlock.style.margin = '2px'
+            newBlock.style.widows = '400px'
+            document.querySelector('main').appendChild(newBlock);
+
+        }
+
+        function addNewBlocks(){
+            let main = document.querySelector('main')
+            let number = document.getElementById('balance').value;
+            number = parseInt(number)
+            for (let i = 0; i < number; i++){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'green';
+                newBlock.style.height = '40px';
+                newBlock.style.border = 'solid 2px black'
+                newBlock.style.borderRadius = '2px'
+                newBlock.style.margin = '2px'
+                withA = (i+15) + '0px'
+                newBlock.style.width = withA
+                newBlock.innerHTML = `Блок № ${i+1}: 2*${i+1}<sup>2</sup> = ${2*(i+1)**2}`;
+                main.appendChild(newBlock);
+            }
+        }
+
+        function add20_50(){
+            let main = document.querySelector('main')
+            for (let i = 20; i <= 50; i+= 2.5){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'blue';
+                newBlock.style.height = '50px';
+                newBlock.style.border = 'solid 2px green'
+                newBlock.style.borderRadius = '2px'
+                newBlock.style.margin = '2px'
+                newBlock.style.width = "100px"
+                newBlock.style.color = "yellow"
+                newBlock.innerHTML = `${i}`;
+                main.appendChild(newBlock);
+
+            }
+        }
+        function add10_m80(){
+            let main = document.querySelector('main')
+            let flexContainer = document.createElement('div');
+            flexContainer.style.display = 'flex'
+            main.appendChild(flexContainer)
+            for (let i = 10; i >=-80 ; i-= 3){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'blue';
+                newBlock.style.display = 'flex'
+                newBlock.style.alignItems = 'center'
+                newBlock.style.justifyContent = 'center'
+                newBlock.style.height = '50px';
+                newBlock.style.border = 'solid 2px green'
+                newBlock.style.borderRadius = '50%'
+                newBlock.style.margin = '2px'
+                newBlock.style.width = "100px"
+                newBlock.style.color = "yellow"
+                newBlock.style.textAlign = 'center'
+                
+                newBlock.innerHTML = `${i}`;
+                flexContainer.appendChild(newBlock);
+
+            }
+
+           
+    }
+        function add_opacity(){
+                let main = document.querySelector('main');
+                for (let i = 0; i <= 10 ; i+= 1){
+                    let newBlock = document.createElement('div');
+                    newBlock.style.backgroundColor = 'blue';
+                    newBlock.style.display = 'flex'
+                    newBlock.style.alignItems = 'center'
+                    newBlock.style.justifyContent = 'center'
+                    newBlock.style.height = '50px';
+                    newBlock.style.border = 'solid 2px green'
+                    newBlock.style.margin = '2px'
+                    newBlock.style.width = "100px"
+                    newBlock.style.color = "yellow"
+                    newBlock.style.textAlign = 'center'
+                    newBlock.style.opacity =  i * 0.1
+                    
+                    newBlock.innerHTML = `${i}`;
+                    main.appendChild(newBlock);
+
+                }
+
+        }
+        function add_red_green(){
+            let main = document.querySelector('main');
+            let number = document.getElementById('colors').value;
+            number = parseInt(number);
+            let flexContainer = document.createElement('div');
+            flexContainer.style.display = 'flex';
+            flexContainer.style.alignItems = 'center';
+            main.appendChild(flexContainer);
+
+            for (let i = number; i >= 1; i -= 1){
+                let newBlock = document.createElement('div');
+                if (i % 2 == 0){
+                    newBlock.style.backgroundColor = "green";
+                    newBlock.style.margin = '2px';
+                    newBlock.style.width = "100px";
+                    newBlock.style.display = 'flex';
+                    newBlock.style.height = '50px';
+                    newBlock.style.border = 'solid 2px green';
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.alignItems = 'center';
+                    newBlock.style.justifyContent = 'center';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.innerHTML = `${i}`;
+                    newBlock.style.justifyContent = 'center'
+                    flexContainer.appendChild(newBlock);
+                }
+                else{
+                    newBlock.style.backgroundColor = "red";
+                    newBlock.style.margin = '2px';
+                    newBlock.style.width = "100px";
+                    newBlock.style.height = '50px';
+                    newBlock.style.display = 'flex';
+                    newBlock.style.border = 'solid 2px green';
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.alignItems = 'center';
+                    newBlock.style.justifyContent = 'center';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.style.color = 'green';
+                    newBlock.innerHTML = `${i}`;
+                    flexContainer.appendChild(newBlock);
+                }
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="addNewBlock()">Добавить блок</button>
+        <button onclick="addNewBlocks()">Добавить блоки</button>
+        <input type="number" value="100" id="balance"></label>
+        <button onclick="add20_50()">20=>50</button>
+        <button onclick="add10_m80()">10=>-80</button>
+        <button onclick="add_opacity()">opacity</button>
+        <input type="number" value="0" id="colors"></label>
+        <button onclick="add_red_green()">Цветные круги</button>
+    </main>
+
+    <footer>
+        &copy; Дмитрий Гаврилов, ФБИ-21, 2 курс 2024
+    </footer>
+
+</body>
+
+</html>

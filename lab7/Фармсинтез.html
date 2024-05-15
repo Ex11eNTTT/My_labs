@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Гаврилов Дмитрий Дмитриевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+
+    <script>
+        function showAction(){
+            const actiondata = ['26.04.2024','27.04.2024','29.04.2024','30.04.2024',
+                '02.05.2024','03.05.2024','06.05.2024','07.05.2024','08.05.2024','10.05.2024']
+            const actionvalue = [5.05,5.07,5.13,5.10,5.09,5.06,4.98,4.97,4.97,5.10]
+            let tabllee = document.getElementById('tablee');
+            for (let i=0; i < actionvalue.length; i++){
+            let tr = document.createElement('tr');
+
+            let td1 = document.createElement('td');
+            td1.innerText = actiondata[i];
+            tr.appendChild(td1);
+
+            let td2 = document.createElement('td');
+            td2.innerText = actionvalue[i];
+            tr.appendChild(td2);
+            if (i > 0) {
+            let diff = actionvalue[i] - actionvalue[i-1];
+            let td3 = document.createElement('td');
+            td3.innerText = diff.toFixed(2);
+            tr.appendChild(td3);
+            } else {
+                let td3 = document.createElement('td');
+                td3.innerText = '-';
+                tr.appendChild(td3);
+            }
+
+            tabllee.appendChild(tr);
+            }
+            let detail = document.getElementById('detail')
+            let max = document.getElementById('max')
+            let min = document.getElementById('min')
+
+            
+            max.innerText = "Максимльное значение: "+Math.max(...actionvalue);
+            min.innerText = "Минимальное значение: "+Math.min(...actionvalue);
+
+            let sum = 0
+            for(let i = 0; i < actionvalue.length; i++){
+                sum += actionvalue[i]
+
+
+            }
+            let avarage = sum/actionvalue.length
+            avarage = avarage.toFixed(2)
+            detail.innerHTML = "Среднее значение: " + avarage
+            let but = document.getElementById('but');
+            but.style.display = 'none'
+
+
+           
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="showAction()" id="but">Курс акций Фармсинтез</button>
+        <table id="tablee" border="1"></table>
+        <div id="detail"></div>
+        <div id="max"></div>
+        <div id="min"></div>
+       
+    </main>
+
+    <footer>
+        &copy; Дмитрий Гаврилов, ФБИ-21, 2 курс 2024
+    </footer>
+
+</body>
+
+</html>
