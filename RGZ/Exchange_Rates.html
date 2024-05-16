@@ -31,7 +31,7 @@
                     output.innerText = usernumber + " ₾"
                 }
                 else if(first == "RUB" && second == "GEL"){
-                    output.innerText = ((json.Valute.GEL.Value) / usernumber) + " ₾";
+                    output.innerText = (usernumber / (json.Valute.GEL.Value)) + " ₾";
                 }
                 else if(first == "GEL" && second == "RUB"){
                     output.innerText = ((json.Valute.GEL.Value) * usernumber) + " ₽";
@@ -168,7 +168,7 @@
     </header>
 
     <main>
-        <div class="mainwindow">
+        <div class="mainwindow" style="margin-left: 200px;">
             <div id="name">Конвертор валют</div>
                 <div id="RUBGEL">
                     <div id="RUB">
@@ -191,7 +191,7 @@
        
     </main>
 
-    <footer>
+    <footer style="position: absolute; bottom: 0; left: 0;">
         Crédit Agricole Group | Crédit Agricole CIB
     </footer>
 

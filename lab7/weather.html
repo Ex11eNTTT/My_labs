@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Гаврилов Дмитрий Дмитриевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function weatherget(){
+            const url = "https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok"
+            fetch(url)
+            .then(function(response){
+                return response.json()
+            })
+            .then(function (json){
+                let weather = json.hourly.temperature_2m;
+                let time = json.hourly.time;
+
+                document.getElementById('noon-temp').innerText = "Погода в 12:00: " +  weather[4] + "°С";
+                document.getElementById('evining-temp').innerHTML = "Погода в 18:00: " + weather[8] + "°С";
+                document.getElementById('morning-temp').innerText = "Дата сегодня : "   + time[0].slice(0,10) + " : " + weather[0] + "°С"
+            })  
+        }
+       
+
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="weatherget()">Получить данные</button>
+        <div id="morning-temp"></div>
+        <div id="noon-temp"></div>
+        <div id="evening-temp"></div>
+       
+    </main>
+
+    <footer>
+        &copy; Дмитрий Гаврилов, ФБИ-21, 2 курс 2024
+    </footer>
+
+</body>
+
+</html>
