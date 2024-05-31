@@ -32,11 +32,11 @@ function showDate(){
 function showWeak(){
   
 
-    let day = document.getElementById('day1').value 
+    let day = document.getElementById('day1').value
     let month = document.getElementById('month1').value - 1
     let year = document.getElementById('year1').value
     let output = document.getElementById('outputweak2')
     let dt = new Date(year,month,day);
-    let days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
+    let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота','Воскресенье']
     output.innerHTML = days[dt.getDay()]
 }
